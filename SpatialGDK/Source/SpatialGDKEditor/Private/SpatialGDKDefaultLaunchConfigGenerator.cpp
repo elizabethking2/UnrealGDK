@@ -175,6 +175,8 @@ uint32 GetWorkerCountFromWorldSettings(const UWorld& World)
 		}
 	}
 
+	UE_LOG(LogSpatialGDKDefaultLaunchConfigGenerator, Warning, TEXT("DEBUG: I HAVE DETERMINED THAT WE SHOULD START %d WORKERS."), NumWorkers);
+
 	return NumWorkers;
 }
 
