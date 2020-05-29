@@ -151,7 +151,8 @@ uint32 GetWorkerCountFromWorldSettings(const UWorld& World)
 		}
 		else
 		{
-			NumWorkers += LoadBalancingStrat->GetNumberOfWorkersForPIE();
+			NumWorkers += WorldSettings->DefaultLayerLoadBalanceStrategy->GetDefaultObject<UAbstractLBStrategy>()->GetMinimumRequiredWorkers();
+			//NumWorkers += LoadBalancingStrat->GetNumberOfWorkersForPIE();
 		}
 	}
 
@@ -169,7 +170,8 @@ uint32 GetWorkerCountFromWorldSettings(const UWorld& World)
 		}
 		else
 		{
-			NumWorkers += LoadBalancingStrat->GetNumberOfWorkersForPIE();
+			NumWorkers += LayerInfo.LoadBalanceStrategy->GetDefaultObject<UAbstractLBStrategy>()->GetMinimumRequiredWorkers();
+			//NumWorkers += LoadBalancingStrat->GetNumberOfWorkersForPIE();
 		}
 	}
 
