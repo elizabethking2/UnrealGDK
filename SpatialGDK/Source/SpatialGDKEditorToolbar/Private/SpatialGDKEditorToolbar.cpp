@@ -783,6 +783,7 @@ void FSpatialGDKEditorToolbarModule::VerifyAndStartDeployment()
 		{
 			Conf.NumEditorInstances = GetWorkerCountFromWorldSettings(*EditorWorld);
 		}
+		UE_LOG(LogSpatialGDKEditorToolbar, Warning, TEXT("DEBUG: I HAVE DETERMINED THAT WE SHOULD START %d WORKERS. UPPER LOG."), Conf.NumEditorInstances);
 
 		if (!ValidateGeneratedLaunchConfig(LaunchConfigDescription, Conf))
 		{
